@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+int customerID, unitsConsumed;
+char customerName[50];
+
+cout <<"Enter Customer ID: " ;
+cin >> customerID;
+
+cout <<"Enter Customer name: " ;
+cin >> customerName;
+
+cout <<"Enter units consumed: " ;
+cin >> unitsConsumed;
+
+float surcharge,chargeperunit;
+int amountcharges;
+if(unitsConsumed<=199){
+	chargeperunit=16.20;
+}
+else if(unitsConsumed>=200 && unitsConsumed<300){
+	chargeperunit=20.10;
+}
+else if(unitsConsumed>=300 && unitsConsumed<500){
+	chargeperunit=27.10;
+}
+else if(unitsConsumed>=500){
+	chargeperunit=35.90;
+}
+amountcharges=unitsConsumed*chargeperunit;
+
+if(amountcharges>18000){
+	surcharge=amountcharges*0.15;
+}
+else{
+	surcharge=0.0;
+}
+float netamount=amountcharges+surcharge;
+
+cout <<"Customer ID:"<< customerID<<endl;
+cout <<"Customer Name:"<< customerName<<endl;
+cout <<"Units Consumed: "<<unitsConsumed <<endl;
+cout <<"Amount Charges @Rs."<< fixed << setprecision(2)<<chargeperunit<<" per unit:"<<amountcharges <<endl;
+cout <<"Surcharge Amount:"<<unitsConsumed <<endl;
+cout <<"Net Amount Paid by the Customer:"<< fixed << setprecision(2)<<netamount <<endl;
+
+return 0;
+}
